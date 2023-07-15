@@ -1,0 +1,49 @@
+<?php
+require 'config.php';
+require 'productManager.php';
+
+$products = ProductManager::getProducts();
+ProductManager::handlePostRequest()
+
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h1>Admin Panel</h1>
+
+    <!-- Create a Product Form -->
+    <h2>Create Product</h2>
+    <form action="adminPage.php" method="POST">
+        <input type="text" name="name" placeholder="Product Name" required>
+        <textarea name="description" placeholder="Product Description" required></textarea>
+        <input type="number" name="price" placeholder="Product Price" required>
+        <button type="submit">Create</button>
+    </form>
+
+    <!-- List available products -->
+    <h2>Product List</h2>
+    <?php foreach ($products as $product): ?>
+        <div class="product">
+            <h3>
+                <?php echo $product['name']; ?>
+            </h3>
+            <p>
+                <?php echo $product['description']; ?>
+            </p>
+            <p>Price: $
+                <?php echo $product['price']; ?>
+            </p>
+            <a href="adminPage.php?delete=<?php echo $product['id']; ?>">Delete</a>
+        </div>
+    <?php endforeach; ?>
+
+</body>
+
+</html>
