@@ -20,10 +20,10 @@ ProductManager::handlePostRequest()
 
     <!-- Create a Product Form -->
     <h2>Create Product</h2>
-    <form action="adminPage.php" method="POST">
-        <input type="text" name="name" placeholder="Product Name" required>
-        <textarea name="description" placeholder="Product Description" required></textarea>
-        <input type="number" name="price" placeholder="Product Price" required>
+    <form action="adminPage.php" method="POST" onsubmit="return FormsValidator.validateForm()">
+        <input type="text" name="name" id="name" placeholder="Product Name" required>
+        <textarea name="description" id="description" placeholder="Product Description" required></textarea>
+        <input type="number" name="price" id="price" placeholder="Product Price" required>
         <button type="submit">Create</button>
     </form>
 
@@ -44,6 +44,7 @@ ProductManager::handlePostRequest()
         </div>
     <?php endforeach; ?>
 
+    <script src="FormsValidator.js"></script>
 </body>
 
 </html>
