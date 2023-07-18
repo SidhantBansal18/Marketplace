@@ -32,11 +32,11 @@
                 <img src="<?php echo $product['image_path']; ?>" alt=<?php echo $product['name']?>>
 
                 <?php if($purchaseButton): ?>
-                    <button>Purchase</button>        
+                    <a href="checkoutForm.php?product=<?php echo $product['name']; ?>">Purchase</a>        
                 <?php endif; ?>    
 
             </div>
         <?php endforeach; ?>
-
+        
     </body>
 </html>

@@ -1,7 +1,7 @@
 class FormsValidator{
 
-    //Function to make sure that the user does not submit blank or invalid values
-    static validateForm(){
+    //Function to make sure that the admin does not submit blank or invalid values
+    static validateAdminForm(){
         // Retrieve form inputs
         const nameInput = document.getElementById('name');
         const descriptionInput = document.getElementById('description');
