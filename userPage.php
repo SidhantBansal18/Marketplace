@@ -13,6 +13,7 @@
         <h1>User Page</h1>
         <h2>Available products in the marketplace</h2>
         <?php
+            $purchaseButton = true;
             include("productsList.php");
         ?>
     </body>

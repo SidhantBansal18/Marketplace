@@ -15,6 +15,7 @@
     <h1>Admin Panel</h1>
     <?php
         include("adminForm.php");
+        $deleteButton = true;
         include("productsList.php");
     ?>
 </body>

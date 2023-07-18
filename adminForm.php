@@ -12,8 +12,9 @@
             <input type="text" name="name" id="name" placeholder="Product Name" required>
             <textarea name="description" id="description" placeholder="Product Description" required></textarea>
             <input type="number" name="price" id="price" placeholder="Product Price" required>
-            <input type="file" name="image">
+            <input type="file" name="image" required>
             <button type="submit">Create</button>
+            <br /> <br />
         </form>
 
     </body>

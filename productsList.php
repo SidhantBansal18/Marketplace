@@ -1,3 +1,9 @@
+<?php
+    // Check if the variable indicating the button should be hidden is set
+    $deleteButton = isset($deleteButton) ? $deleteButton : false;
+    $purchaseButton = isset($purchaseButton) ? $purchaseButton : false;
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,9 +24,17 @@
                 <p>Price: $
                     <?php echo $product['price']; ?>
                 </p>
-                <a href="adminPage.php?delete=<?php echo $product['id']; ?>">Delete</a>
+
+                <?php if ($deleteButton): ?>
+                    <a href="adminPage.php?delete=<?php echo $product['id']; ?>">Delete</a>
+                <?php endif; ?>
+
                 <img src="<?php echo $product['image_path']; ?>" alt=<?php echo $product['name']?>>
-                <button>Purchase</button>            
+
+                <?php if($purchaseButton): ?>
+                    <button>Purchase</button>        
+                <?php endif; ?>    
+
             </div>
         <?php endforeach; ?>
 
