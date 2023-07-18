@@ -5,7 +5,7 @@ class ProductManager {
   // Function to retrieve all products
   public static function getProducts() {
     global $db;
-    $stmt = $db->query('SELECT * FROM products');
+    $stmt = $db->query('SELECT * FROM products WHERE is_deleted = false');
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
@@ -27,7 +27,7 @@ class ProductManager {
   // Delete product
   public static function deleteProduct($id) {
     global $db;
-    $stmt = $db->prepare('DELETE FROM products WHERE id = ?');
+    $stmt = $db->prepare('UPDATE products SET is_deleted = true WHERE id = ?');
     $stmt->execute([$id]);
   }
 

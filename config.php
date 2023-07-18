@@ -21,6 +21,7 @@ try {
       description TEXT NOT NULL,
       price DECIMAL(10, 2) NOT NULL,
       image_path VARCHAR(255),
+      is_deleted BOOLEAN DEFAULT false,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )";
 
