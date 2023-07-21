@@ -1,3 +1,4 @@
+<!-- File that contains connections and scripts which are common almost everywhere within the code so that it can be reused easily -->
 <?php
 require 'config.php';
 require 'productManager.php';

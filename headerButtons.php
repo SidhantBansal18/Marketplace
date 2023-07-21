@@ -1,3 +1,4 @@
+<!-- File that contains all the buttons and on clicking them will take on the relvant page-->
 <!DOCTYPE html>
 <html>
     <head>

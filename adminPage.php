@@ -1,5 +1,5 @@
 <?php
-    require 'establishConnections.php';
+    require 'commonHeadersAndScripts.php';
 ?>
 
 <!DOCTYPE html>

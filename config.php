@@ -1,3 +1,4 @@
+<!-- Setting up and connecting to the database -->
 <?php
 $host = 'localhost';
 $dbname = 'mysql';

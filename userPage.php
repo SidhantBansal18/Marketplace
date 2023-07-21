@@ -1,5 +1,6 @@
+<!-- The page that a user will see -->
 <?php
-    require 'establishConnections.php';
+    require 'commonHeadersAndScripts.php';
 ?>
 
 <!DOCTYPE html>

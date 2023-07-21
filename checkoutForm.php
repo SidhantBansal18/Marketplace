@@ -1,3 +1,6 @@
+<!-- Form that gets displayed when a user clicks on the purchase button. -->
+<!-- The name of the product in the form gets auto filled with the name of the product on which the purchase button is clicked -->
+
 <!DOCTYPE html>
 <html>
 <head>
