@@ -24,19 +24,19 @@
                 <p>Price: $
                     <?php echo $product['price']; ?>
                 </p>
-
                 <!-- Hiding it if a user is accessing this page and enabling it if an admin is accessing this page -->
-                <?php if ($deleteButton): ?>
-                    <a href="adminPage.php?delete=<?php echo $product['id']; ?>">Delete</a>
-                <?php endif; ?>
-
-                <img src="<?php echo $product['image_path']; ?>" alt=<?php echo $product['name']?>>
-
+                <p>
+                    <?php if ($deleteButton): ?>
+                        <a href="adminPage.php?delete=<?php echo $product['id']; ?>">Delete</a>
+                    <?php endif; ?> 
+                </p>
                 <!-- Hiding it if an admin is accessing this page and enabling it if a user is accessing this page -->
-                <?php if($purchaseButton): ?>
-                    <a href="checkoutForm.php?product=<?php echo $product['name']; ?>">Purchase</a>        
-                <?php endif; ?>    
-
+                <p>
+                    <?php if($purchaseButton): ?>
+                        <a href="checkoutForm.php?product=<?php echo $product['name']; ?>">Purchase</a>        
+                    <?php endif; ?>  
+                </p>
+                <img src="<?php echo $product['image_path']; ?>" alt=<?php echo $product['name']?>>
             </div>
         <?php endforeach; ?>
         
