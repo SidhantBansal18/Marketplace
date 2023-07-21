@@ -2,10 +2,11 @@
 require 'config.php';
 
 class ProductManager {
+
   // Function to retrieve all products
   public static function getProducts() {
     global $db;
-    $stmt = $db->query('SELECT * FROM products WHERE is_deleted = false');
+    $stmt = $db->query('SELECT * FROM sidhant_submission WHERE is_deleted = false');
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
@@ -20,14 +21,14 @@ class ProductManager {
       $imagePath = $targetDirectory . $filename;
       move_uploaded_file($_FILES['image']['tmp_name'], $imagePath);
     }
-    $stmt = $db->prepare('INSERT INTO products (name, description, price, image_Path) VALUES (?, ?, ?, ?)');
+    $stmt = $db->prepare('INSERT INTO sidhant_submission (name, description, price, image_Path) VALUES (?, ?, ?, ?)');
     $stmt->execute([$name, $description, $price, $imagePath]);
   }
 
   // Delete product
   public static function deleteProduct($id) {
     global $db;
-    $stmt = $db->prepare('UPDATE products SET is_deleted = true WHERE id = ?');
+    $stmt = $db->prepare('UPDATE sidhant_submission SET is_deleted = true WHERE id = ?');
     $stmt->execute([$id]);
   }
 

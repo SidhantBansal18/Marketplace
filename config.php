@@ -1,15 +1,15 @@
 <?php
 $host = 'localhost';
-$dbname = 'eventenyproducts';
+$dbname = 'mysql';
 $username = 'root';
-$password = 'root';
+$password = '';
 
 try {
   $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   // Check if the "products" table exists, and create it if it doesn't
-  $tableName = 'products';
+  $tableName = 'sidhant_submission';
   $checkTableQuery = "SHOW TABLES LIKE '$tableName'";
   $stmt = $db->query($checkTableQuery);
   $tableExists = $stmt->rowCount() > 0;
